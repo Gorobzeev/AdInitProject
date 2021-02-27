@@ -21,3 +21,21 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+# Maven
+target/
+/mvnw
+/mvnw.cmd
+.mvn/
+
+# JetBrains IDE
+.idea/
+*.iml
+
+/HELP.md
+data/
+
+### Mobile Service ###
+/services/mobile-service/mvnw
+/services/mobile-service/mvnw.cmd
+/services/mobile-service/mobile-service.iml
+/services/mobile-service/target
