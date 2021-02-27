@@ -35,5 +35,5 @@ jobs:
       - name: Upload Maven build artifact
         uses: actions/upload-artifact@v1
         with:
-          name: artifact
+          name: mobile-service.jar
           path: services/mobile-service/target/mobile-service.jar
