@@ -8,7 +8,7 @@ on:
 jobs:
 
   Pipleline:
-    name: Checking and building application
+    name: Testing and building application
     runs-on: ubuntu-18.04
     steps:
       - name: Download repository
@@ -31,3 +31,10 @@ jobs:
 
       - name: Maven Package
         run: mvn -B package
+
+      - name: Cope jar's to foler
+        run: mkdir developing && cp services/mobile-service/target/*.jar developing
+        uses: actions/upload-artifact@v2
+        with:
+          name: Package
+          path: developing
