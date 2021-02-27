@@ -34,7 +34,6 @@ jobs:
 
       - name: Cope jar's to foler
         run: mkdir developing && cp services/mobile-service/target/*.jar developing
-        uses: actions/upload-artifact@v2
         with:
           name: Package
           path: developing
