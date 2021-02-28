@@ -1,4 +1,49 @@
 server:
   port: 8090
-  servlet:
-    context-path: /users
+
+database:
+  host: localhost
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+        dialect: org.hibernate.dialect.PostgreSQL94Dialect
+        enable_lazy_load_no_trans: true
+        jdbc:
+          batch_size: 50
+          lob:
+            non_contextual_creation: true
+      show-sql: true
+      open-in-view: false
+
+  datasource:
+    url: jdbc:postgresql://${database.host}/adler-local-db?&useSSL=false
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+
+  flyway:
+    enabled: true
+    password: ${spring.datasource.password}
+    user: ${spring.datasource.username}
+    table: management_history_version
+    baseline-on-migrate: true
+    schemas: adler
+
+  database:
+    encryption-key: simple_encryption_key
+
+logging:
+  level:
+    org.springframework: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type: TRACE
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+    file: "%d %p %c{1.} [%t] %m%n"
+  file:
+    name: logs/mobile-service.log
