@@ -32,6 +32,7 @@ spring:
     user: ${spring.datasource.username}
     table: management_history_version
     baseline-on-migrate: true
+    schemas: public
 
   database:
     encryption-key: simple_encryption_key

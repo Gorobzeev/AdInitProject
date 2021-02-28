@@ -1,0 +1,32 @@
+
+application:
+#  test:
+#    app-user-username: user@hjb.com
+#    app-user-password: password
+#    app-admin-username: admin@hjb.com
+#    app-admin-password: password
+
+spring:
+  flyway:
+    enabled: false
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: admin
+    password: admin
+
+#  cloud:
+#    discovery:
+#      enabled: false
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  database:
+    encryption-key: simple_encryption_key
+
+logging:
+  level:
+    org.springframework: info
+

@@ -3,7 +3,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 
 
-CREATE TABLE IF NOT EXISTS "user"
+CREATE TABLE IF NOT EXISTS public."user"
 (
     id            UUID PRIMARY KEY NOT NULL,
     email         bytea UNIQUE     NOT NULL,
