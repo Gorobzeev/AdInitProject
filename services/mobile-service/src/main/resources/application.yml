@@ -32,7 +32,6 @@ spring:
     user: ${spring.datasource.username}
     table: management_history_version
     baseline-on-migrate: true
-    schemas: adler
 
   database:
     encryption-key: simple_encryption_key

@@ -1,9 +1,9 @@
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-CREATE SCHEMA IF NOT EXISTS adler;
 
 
-CREATE TABLE IF NOT EXISTS adler."user"
+
+CREATE TABLE IF NOT EXISTS "user"
 (
     id            UUID PRIMARY KEY NOT NULL,
     email         bytea UNIQUE     NOT NULL,
